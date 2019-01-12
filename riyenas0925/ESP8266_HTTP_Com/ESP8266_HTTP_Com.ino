@@ -22,7 +22,7 @@ boolean SendAT(String command, char *response, int second){
   return AT_Response;
 }
 
-void setup() {ㄴ
+void setup() {
   Serial.begin(9600);
   ESP8266.begin(9600);
 
