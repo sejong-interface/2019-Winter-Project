@@ -2,40 +2,46 @@ package kr.or.teamserver.coinserver.Model;
 
 public class ArduinoModel2 {
 
-    private long washerId;
-    private long AmountElectric;
-    private String Time;
-    private String State;
+    private long id;
+    private long amountElectric;
+    private String time;
+    private String state;
 
-    public long getWasherId() {
-        return washerId;
+    public long getId() {
+        return id;
     }
 
-    public void setWasherId(long washerId) {
-        this.washerId = washerId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public long getAmountElectric() {
-        return AmountElectric;
+        return amountElectric;
     }
 
-    public void setAmountElectric(long AmountElectric) {
-        this.AmountElectric = AmountElectric;
+    public void setAmountElectric(long amountElectric) {
+        this.amountElectric = amountElectric;
     }
 
-    public String getTime() {
-        return Time;
+    public String getTime() { return time; }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public void setTime(String Time) {
-        this.Time = Time;
-    }
+    public String returnState(String state) {
+        if(this.getAmountElectric() >= 10) {
+            this.state = "사용중";
+        }
 
-    public String getState() {
-        return State;
-    }
+        else if(this.getAmountElectric() >= 5) {
+            this.state = "사용안함";
+        }
 
-    public void setState(String State) {
-        this.State = State;
+        else {
+            this.state = "고장";
+        }
+
+        return state;
     }
 }
