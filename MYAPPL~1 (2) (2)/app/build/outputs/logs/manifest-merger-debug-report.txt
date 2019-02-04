@@ -1,0 +1,115 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f0bbd2ff7ce5d15841b7370d0cd29168\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d8502406ca4f5e216944f63f06bd786\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3dc09678a437a35a3c643348a9d00b7b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c9977d484222bfb388b6fbd7770d151d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\736dbaaeff494127547aaf786c7cca86\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\706bd212cfd6bd48f084700cfeb0ef0c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\8a1caa33a0b9992e6a346943bd95f32f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\9edb85b3fc62768bcdf552fea5353e88\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\dc2316de44c946c90a832fea9ec868f4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\a4adb6ed70c1430887d5a9d9a290b0c2\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\76f1bcccaa9ccb31c06ce4c5282b6833\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8442857d7250030af91c2ca6b87e9db8\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:3:5-46
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:7:5-23:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d8502406ca4f5e216944f63f06bd786\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d8502406ca4f5e216944f63f06bd786\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:10:9-41
+	android:roundIcon
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:11:9-54
+	android:icon
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:13:9-40
+activity#com.example.jkey2.myapplication.weatherparse
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:14:9-59
+	android:name
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:14:19-47
+activity#com.example.jkey2.myapplication.MainActivity
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:15:9-21:20
+	android:name
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:15:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:19:27-74
+activity#com.example.jkey2.myapplication.jacksonparse
+ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:22:9-50
+	android:name
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml:22:19-47
+uses-sdk
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f0bbd2ff7ce5d15841b7370d0cd29168\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f0bbd2ff7ce5d15841b7370d0cd29168\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d8502406ca4f5e216944f63f06bd786\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d8502406ca4f5e216944f63f06bd786\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3dc09678a437a35a3c643348a9d00b7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3dc09678a437a35a3c643348a9d00b7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c9977d484222bfb388b6fbd7770d151d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c9977d484222bfb388b6fbd7770d151d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\736dbaaeff494127547aaf786c7cca86\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\736dbaaeff494127547aaf786c7cca86\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\706bd212cfd6bd48f084700cfeb0ef0c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\706bd212cfd6bd48f084700cfeb0ef0c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\8a1caa33a0b9992e6a346943bd95f32f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\8a1caa33a0b9992e6a346943bd95f32f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\9edb85b3fc62768bcdf552fea5353e88\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\9edb85b3fc62768bcdf552fea5353e88\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\dc2316de44c946c90a832fea9ec868f4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\dc2316de44c946c90a832fea9ec868f4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\a4adb6ed70c1430887d5a9d9a290b0c2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\a4adb6ed70c1430887d5a9d9a290b0c2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\76f1bcccaa9ccb31c06ce4c5282b6833\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\76f1bcccaa9ccb31c06ce4c5282b6833\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8442857d7250030af91c2ca6b87e9db8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\jkey2\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8442857d7250030af91c2ca6b87e9db8\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jkey2\Desktop\MYAPPL~1 (2)\app\src\main\AndroidManifest.xml
