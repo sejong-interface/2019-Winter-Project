@@ -2,37 +2,33 @@ package kr.or.teamserver.coinserver.controller;
 
 import kr.or.teamserver.coinserver.Model.ArduinoModel2;
 
+import java.util.logging.Logger;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 public class ArduinoController2 {
-    ArduinoModel2 arduinoModel2;
+    ArduinoModel2 command = new ArduinoModel2();
+    private static final Logger logger = Logger.getLogger(ArduinoController2.class.getName());
 
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @GetMapping("/android")
     public ArduinoModel2 sendData() {
-        return this.arduinoModel2;
+        return command;
     }
 
-    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    @PostMapping("/arduino")
     public ArduinoModel2 getData(@RequestBody ArduinoModel2 arduinoModel2) {
 
-        if(arduinoModel2.getAmountElectric() >= 10) {
-            arduinoModel2.setState("사용중");
-        }
+        command = arduinoModel2;
+        command.returnState();
 
-        else if(arduinoModel2.getAmountElectric() >= 4) {
-            arduinoModel2.setState("사용안함");
-        }
+        logger.info("Id: {" + Long.toString(command.getId()) + "}");
+        logger.info("AmountElectric: {" + Long.toString(command.getAmountElectric()) + "}");
+        logger.info("State: {" + command.returnState() + "}");
+        logger.info("Time: {" + command.getTime() + "}");
 
-        else {
-            arduinoModel2.setState("고장");
-        }
-
-        this.arduinoModel2 = arduinoModel2;
-
-        return this.arduinoModel2;
+        return command;
     }
 }
