@@ -7,7 +7,8 @@
 SoftwareSerial ESP8266(8, 9);
 String ssid = "";
 String password = "";
-String domain = "192.168.0.46:8080";
+String domain = "192.168.0.100";
+String port = "8099";
 String address = "/arduino";
 
 EnergyMonitor coinWasher;
@@ -37,22 +38,21 @@ void loop() {
   String httpRequest = "";
   String jsonData = "";
   double rmsI = coinWasher.calcIrms(1480);
-  double rmsPower = rmsI * rmsI;
+  long rmsPower = rmsI * rmsI;
   
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& root = jsonBuffer.createObject();
 
-  root["washerld"] = washerId;
-  root["time"] = random(1, 61);
-  root["amountElectric"] = rmsPower;
+  root["id"] = washerId;
+  root["electricPower"] = rmsPower;
   root.printTo(jsonData);
 
   httpRequest = httpCom(jsonData);
 
-  Serial.println(httpRequest);
-
-  while (!sendAT("AT+CIPSTART=\"TCP\",\"192.168.0.46\",8080", "OK", 15)) {}
+  while (!sendAT("AT+CIPSTART=\"TCP\",\"" + domain + "\"," + port, "OK", 15)) {}
   while (!sendAT("AT+CIPSEND=" + (String)httpRequest.length(), "OK", 15)) {}
+
+  amountElectricMsg(rmsPower);
   
   ESP8266.println(httpRequest);
   Serial.println(httpRequest);
@@ -100,24 +100,26 @@ void commandMsg(String atCommand, boolean atResponse){
   }
 }
 
+void amountElectricMsg(long power){
+  clean();
+  showMsg("Power : " + (String)power);
+}
+
 String httpCom(String jsonData){
-  String cmd = "";  
-  cmd = "POST " + address + " HTTP/1.1" + "\r\n";
-  cmd += "Host: " + domain + "\r\n";
-  cmd += "Connection: close\r\n";
-  cmd += "Content-Type: application/json\r\n";
-  cmd += "Content-Length: ";
-  cmd += (String)jsonData.length();
-  cmd += "\r\n\r\n";
-  cmd += jsonData;
-  cmd += "\r\n\r\n";
-  
+  String cmd = "";
+  cmd.concat("POST " + address + " HTTP/1.1\r\n");
+  cmd.concat("Host: " + domain + "\r\n");
+  cmd.concat("Connection: close\r\n");
+  cmd.concat("Content-Type: application/json\r\n");
+  cmd.concat("Content-Length: " + (String)jsonData.length() + "\r\n\r\n");
+  cmd.concat(jsonData + "\r\n\r\n");
+
   return cmd;
 }
 
 /*********** LCD 표시 기능 **********/
-void showMsg(String status) {
-  msg = status;
+void showMsg(String data) {
+  msg = data;
   
   Serial.println(msg);
   lcd.setCursor(0,0);
