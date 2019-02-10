@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jkey2.myapplication.com.example.jkey2.jkeyAndroid.MainActivity"
+    android:orientation="vertical">
+
+
+
+    <Button
+        android:id="@+id/jacksonbt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="잭슨 테스트"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="150dp" />
+<!--
+      <ProgressBar
+           android:id="@+id/p_Bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:max="100"
+            tools:layout_editor_absoluteX="132dp"
+            tools:layout_editor_absoluteY="8dp"
+            android:indeterminateOnly="false"/>
+        <Button
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ref"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="345dp" />
+        <Button
+            android:id="@+id/progressset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="345dp" />
+-->
+    <Button
+        android:id="@+id/weatherbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="날씨" />
+
+
+</LinearLayout>
