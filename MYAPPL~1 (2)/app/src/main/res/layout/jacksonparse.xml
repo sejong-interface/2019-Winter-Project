@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jkey2.myapplication.jacksonparse"
+    tools:context="com.example.jkey2.myapplication.com.example.jkey2.jkeyAndroid.jacksonparse"
     android:orientation="vertical">
 
 
 
 
         <TextView
-            android:id="@+id/ac2tv"
+            android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="남은시간"
@@ -21,7 +21,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"/>
         <TextView
-            android:id="@+id/ac3tv"
+            android:id="@+id/subText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="갱신 test"
