@@ -16,7 +16,7 @@ import kr.or.teamserver.coinserver.service.AndroidPushNotificationsService;
 @RestController
 public class FcmController {
     String[][] sampleData = {
-            {"cl94GyxkK8c:APA91bHctXWi1zTEaEj1DEEnq5iRwyRG7vRtSoov-73qhpJdFRxWrO06ntAO9Ab7Lz_Yq0XG2yNf8UE0HCs2cnf-Ih-lvqfuuhw7lSRZFa71uZoGhI2B3ITFnWywLX3D1LpGrM5CY2at","Thursday"},
+            {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","Monday"},
     };
 
     Calendar cal = Calendar.getInstance();
