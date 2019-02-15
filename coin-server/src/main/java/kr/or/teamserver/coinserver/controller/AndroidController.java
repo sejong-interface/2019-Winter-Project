@@ -2,6 +2,7 @@ package kr.or.teamserver.coinserver.controller;
 
 import kr.or.teamserver.coinserver.controller.dto.ResultDto;
 import kr.or.teamserver.coinserver.controller.dto.WasherDto;
+import kr.or.teamserver.coinserver.controller.command.ReadHelpFile;
 import kr.or.teamserver.coinserver.model.Washer;
 import kr.or.teamserver.coinserver.service.WasherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,6 @@ public class AndroidController {
         this.washerService = washerService;
     }
 
-
     @GetMapping({"", "/"})
     public ResultDto<WasherDto> searchAll() {
         // TODO 데이터가 존재하지 않을때 status code 가 404 가 되도록 변경
@@ -35,5 +35,15 @@ public class AndroidController {
     public ResultDto<WasherDto> searchOne(@PathVariable long id) {
         Washer washer = washerService.findOne(id);
         return ResultDto.from(List.of(washer));
+    }
+
+    @GetMapping("/specialHelp")
+    public String[] searchSpecial(ReadHelpFile readHelpFile) {
+        return readHelpFile.SpecialHelp();
+    }
+
+    @GetMapping("/generateHelp")
+    public String[] searchGenerate(ReadHelpFile readHelpFile) {
+        return readHelpFile.GenerateHelp();
     }
 }
