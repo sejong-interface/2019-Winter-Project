@@ -2,6 +2,7 @@ package kr.or.teamserver.coinserver.controller;
 
 import kr.or.teamserver.coinserver.controller.dto.ResultDto;
 import kr.or.teamserver.coinserver.controller.dto.WasherDto;
+import kr.or.teamserver.coinserver.controller.command.ReadHelpFile;
 import kr.or.teamserver.coinserver.model.Washer;
 import kr.or.teamserver.coinserver.service.WasherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,17 @@ public class AndroidController {
     public ResultDto<WasherDto> searchOne(@PathVariable long id) {
         Washer washer = washerService.findOne(id);
         return ResultDto.from(List.of(washer));
+    }
+
+    @GetMapping("/specialHelp")
+    public List searchSpecial(ReadHelpFile readHelpFile) {
+        String filename = ".\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\HelpFile\\SpecialHelp.txt";
+        return readHelpFile.getStringBuffer(filename);
+    }
+
+    @GetMapping("/generateHelp")
+    public List searchGenerate(ReadHelpFile readHelpFile) {
+        String filename = ".\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\HelpFile\\GenerateHelp.txt";
+        return readHelpFile.getStringBuffer(filename);
     }
 }
