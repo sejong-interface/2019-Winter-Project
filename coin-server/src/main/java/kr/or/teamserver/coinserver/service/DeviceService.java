@@ -1,15 +1,15 @@
 package kr.or.teamserver.coinserver.service;
 
-import kr.or.teamserver.coinserver.controller.dto.DeviceDto;
+import kr.or.teamserver.coinserver.model.Device;
 
 import java.util.List;
 
 public interface DeviceService {
-    public Integer createDevice(String token, String date);
+    public void create(String token, String date);
 
-    public List<DeviceDto> listAll();
+    public Device read(Long id);
 
-    public Integer updateDevice(String date, Integer id);
+    public void update(Long id, String date);
 
-    public Integer deleteDevice(Integer id);
+    public void delete(Long id);
 }

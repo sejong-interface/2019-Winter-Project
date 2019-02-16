@@ -1,17 +1,9 @@
 package kr.or.teamserver.coinserver.persistence;
 
 
-import kr.or.teamserver.coinserver.controller.dto.DeviceDto;
-import kr.or.teamserver.coinserver.controller.dto.WasherDto;
+import kr.or.teamserver.coinserver.model.Device;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
 
-public interface DeviceDAO {
-    public Integer createDevice(String token, String date);
-
-    public List<DeviceDto> listAll();
-
-    public Integer updateDevice(String date, Integer id);
-
-    public Integer deleteDevice(Integer id);
+public interface DeviceDAO extends CrudRepository<Device, Long> {
 }
