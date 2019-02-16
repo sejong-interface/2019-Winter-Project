@@ -1,9 +1,10 @@
 package kr.or.teamserver.coinserver.model;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tbl_device")
+@Table(name = "device")
 public class Device {
 
     @Id
@@ -14,23 +15,27 @@ public class Device {
     private String token;
 
     @Column(length = 100, nullable = false)
-    private String date;
+    private LocalDateTime registDate;
 
     public Device(){
-        this.id = null;
-        this.token = null;
-        this.date = null;
+
     }
 
-    public Device(Long id, String token, String date){
+    public Device(Long id, String token, LocalDateTime registDate){
         this.id = id;
         this.token = token;
-        this.date = date;
+        this.registDate = registDate;
     }
 
-    public Device(String token, String date){
-        this(null,token,date);
+    public static Device of(String token){
+        return new Device(null, token, LocalDateTime.now());
     }
+
+    public static Device of(Long id, String token){
+        return new Device(id, token, LocalDateTime.now());
+    }
+
+    // TODO of 네이밍 이유
 
     public Long getId() {
         return id;
@@ -40,8 +45,8 @@ public class Device {
         return token;
     }
 
-    public String getDate() {
-        return date;
+    public LocalDateTime getRegistDate() {
+        return registDate;
     }
 
     @Override
@@ -49,7 +54,7 @@ public class Device {
         return "Device{" +
                 "id=" + id +
                 ", token='" + token + '\'' +
-                ", date='" + date + '\'' +
+                ", registDate='" + registDate + '\'' +
                 '}';
     }
 }

@@ -18,26 +18,18 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
-    public void create(String token, String date){
-        Device device = new Device(token, date);
-        deviceDAO.save(device);
+    public void create(String token){
+        deviceDAO.save(Device.of(token));
     }
 
     @Override
-    public Device read(Long id){
-        Optional<Device> optionalDevice = deviceDAO.findById(id);
-
-        if(optionalDevice.isPresent()) {
-            return new Device(optionalDevice.get().getId(), optionalDevice.get().getToken(), optionalDevice.get().getDate());
-        }
-        return new Device();
+    public Optional<Device> read(Long id){
+        return deviceDAO.findById(id);
     }
 
     @Override
-    public void update(Long id, String date){
-        String token = read(id).getToken();
-        Device device = new Device(id, token, date);
-        deviceDAO.save(device);
+    public void update(Long id, String token){
+        deviceDAO.save(Device.of(id, token));
     }
 
     @Override

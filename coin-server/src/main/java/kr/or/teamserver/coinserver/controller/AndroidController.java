@@ -2,7 +2,10 @@ package kr.or.teamserver.coinserver.controller;
 
 import kr.or.teamserver.coinserver.controller.dto.ResultDto;
 import kr.or.teamserver.coinserver.controller.dto.WasherDto;
+import kr.or.teamserver.coinserver.exception.DeviceNotFound;
+import kr.or.teamserver.coinserver.model.Device;
 import kr.or.teamserver.coinserver.model.Washer;
+import kr.or.teamserver.coinserver.service.DeviceService;
 import kr.or.teamserver.coinserver.service.WasherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +20,22 @@ import java.util.List;
 public class AndroidController {
 
     private final WasherService washerService;
+    private final DeviceService deviceService;
 
     @Autowired
-    public AndroidController(WasherService washerService) {
+    public AndroidController(WasherService washerService, DeviceService deviceService) {
         this.washerService = washerService;
+        this.deviceService = deviceService;
     }
 
+    @GetMapping("/device/{id}")
+    public Device device(@PathVariable Long id){
+        if(!deviceService.read(id).isPresent()) {
+            throw new DeviceNotFound("404" + id);
+        }
+
+        return deviceService.read(id).get();
+    }
 
     @GetMapping({"", "/"})
     public ResultDto<WasherDto> searchAll() {
