@@ -50,7 +50,7 @@ void loop() {
   httpRequest = httpCom(jsonData);
 
   while (!sendAT("AT+CIPSTART=\"TCP\",\"" + domain + "\"," + port, "OK", 15)) {}
-  while (!sendAT("AT+CIPSEND=" + (String)httpRequest.length(), "OK", 15)) {}
+  while (!sendAT("AT+CIPSEND=" + (String) httpRequest.length(), "OK", 15)) {}
 
   amountElectricMsg(rmsPower);
   
@@ -102,16 +102,16 @@ void commandMsg(String atCommand, boolean atResponse){
 
 void amountElectricMsg(long power){
   clean();
-  showMsg("Power : " + (String)power);
+  showMsg("Power : " + (String) power);
 }
 
 String httpCom(String jsonData){
   String cmd = "";
-  cmd.concat("POST " + address + (String)washerId + " HTTP/1.1\r\n");
+  cmd.concat("POST " + address + (String) washerId + " HTTP/1.1\r\n");
   cmd.concat("Host: " + domain + "\r\n");
   cmd.concat("Connection: close\r\n");
   cmd.concat("Content-Type: application/json\r\n");
-  cmd.concat("Content-Length: " + (String)jsonData.length() + "\r\n\r\n");
+  cmd.concat("Content-Length: " + (String) jsonData.length() + "\r\n\r\n");
   cmd.concat(jsonData + "\r\n\r\n");
 
   return cmd;
