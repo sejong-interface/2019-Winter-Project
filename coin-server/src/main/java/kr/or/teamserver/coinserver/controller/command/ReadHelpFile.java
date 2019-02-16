@@ -6,77 +6,47 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ReadHelpFile {
-    private String[] GenHelp;
-    private String[] EspHelp;
-
+    private List Help = new ArrayList();
     private final Logger logger = LoggerFactory.getLogger(ReadHelpFile.class);
 
-    public String[] GenerateHelp() {
-        int i = 0;
+    private void getStringBuffer(String filename) {
         try {
-            File file = new File("C:\\Users\\onsae\\Documents\\2019-Winter-Project\\coin-server\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\command\\GenerateHelp.txt");
+            File file = new File(filename);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            bufferedReader.mark(10000);
             String line = "";
             while((line = bufferedReader.readLine()) != null) {
-                i = i + 1;
-            }
-
-            bufferedReader.reset();
-            GenHelp = new String[i];
-            i = 0;
-
-            while((line = bufferedReader.readLine()) != null) {
                 logger.info("line={}", line);
-                GenHelp[i] = line;
-                i = i+1;
+                Help.add(line);
             }
             bufferedReader.close();
+
         } catch (FileNotFoundException e) {
 
         } catch (IOException e) {
             System.out.println(e);
         }
-
-        return GenHelp;
     }
 
-    public String[] SpecialHelp() {
-        int i = 0;
-        try {
-            File file = new File("C:\\Users\\onsae\\Documents\\2019-Winter-Project\\coin-server\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\command\\SpecialHelp.txt");
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+    public List GenerateHelp() {
+        String filename = ".\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\HelpFile\\GenerateHelp.txt";
+        getStringBuffer(filename);
 
-            bufferedReader.mark(10000);
-            String line = "";
-            while((line = bufferedReader.readLine()) != null) {
-                i = i + 1;
-            }
+        return Help;
+    }
 
-            bufferedReader.reset();
-            EspHelp = new String[i];
-            i = 0;
+    public List SpecialHelp() {
+        String filename = ".\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\HelpFile\\SpecialHelp.txt";
+        getStringBuffer(filename);
 
-            while((line = bufferedReader.readLine()) != null) {
-                logger.info("line={}", line);
-                EspHelp[i] = line;
-                i = i+1;
-            }
-            bufferedReader.close();
-
-        } catch (FileNotFoundException e) {
-
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-
-        return EspHelp;
+        return Help;
     }
 }

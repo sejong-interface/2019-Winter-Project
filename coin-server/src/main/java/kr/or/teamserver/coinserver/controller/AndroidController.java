@@ -38,12 +38,12 @@ public class AndroidController {
     }
 
     @GetMapping("/specialHelp")
-    public String[] searchSpecial(ReadHelpFile readHelpFile) {
+    public List searchSpecial(ReadHelpFile readHelpFile) {
         return readHelpFile.SpecialHelp();
     }
 
     @GetMapping("/generateHelp")
-    public String[] searchGenerate(ReadHelpFile readHelpFile) {
+    public List searchGenerate(ReadHelpFile readHelpFile) {
         return readHelpFile.GenerateHelp();
     }
 }
