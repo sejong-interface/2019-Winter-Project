@@ -1,10 +1,10 @@
 package kr.or.teamserver.coinserver.payload;
 
 public class UploadFileResponse {
-    private String fileName;
-    private String fileDownloadUri;
-    private String fileType;
-    private long size;
+    private final String fileName;
+    private final String fileDownloadUri;
+    private final String fileType;
+    private final long size;
 
     public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size) {
         this.fileName = fileName;

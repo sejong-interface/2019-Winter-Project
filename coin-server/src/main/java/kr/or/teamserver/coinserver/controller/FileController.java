@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @RestController
+@RequestMapping("/file")
 public class FileController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
@@ -23,7 +24,7 @@ public class FileController {
     @Autowired
     private FileStorageService fileStorageService;
 
-    @PostMapping("/uploadFile")
+    @PostMapping("/upload")
     @ResponseBody
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = fileStorageService.storeFile(file);
@@ -37,7 +38,7 @@ public class FileController {
                 file.getContentType(), file.getSize());
     }
 
-    @GetMapping("/downloadFile/{fileName:.+}")
+    @GetMapping("/download/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
         Resource resource = fileStorageService.loadFileAsResource(fileName);
 
