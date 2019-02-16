@@ -24,6 +24,7 @@ public class AndroidController {
         this.washerService = washerService;
     }
 
+
     @GetMapping({"", "/"})
     public ResultDto<WasherDto> searchAll() {
         // TODO 데이터가 존재하지 않을때 status code 가 404 가 되도록 변경
@@ -39,11 +40,13 @@ public class AndroidController {
 
     @GetMapping("/specialHelp")
     public List searchSpecial(ReadHelpFile readHelpFile) {
-        return readHelpFile.SpecialHelp();
+        String filename = ".\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\HelpFile\\SpecialHelp.txt";
+        return readHelpFile.getStringBuffer(filename);
     }
 
     @GetMapping("/generateHelp")
     public List searchGenerate(ReadHelpFile readHelpFile) {
-        return readHelpFile.GenerateHelp();
+        String filename = ".\\src\\main\\java\\kr\\or\\teamserver\\coinserver\\controller\\HelpFile\\GenerateHelp.txt";
+        return readHelpFile.getStringBuffer(filename);
     }
 }
