@@ -1,6 +1,6 @@
 package com.example.jkey2.jkeyAndroid;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-public class model {
+public class Model {
     @JsonIgnoreProperties(ignoreUnknown = true)
     private int id;
     private String amountElectric;

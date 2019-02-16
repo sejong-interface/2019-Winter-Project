@@ -6,22 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.jkey2.myapplication.com.example.jkey2.jkeyAndroid.MainActivity"
     android:orientation="vertical">
-    <Button
-        android:id="@+id/jacksonbt"
+    <EditText
+        android:id="@+id/EditText1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="잭슨 테스트"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="150dp" />
-    <Button
-        android:id="@+id/weatherbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="날씨" />
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/restcalculatebutton"
+        android:id="@+id/savebt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="남은잔액" />
+        android:text="저장" />
 </LinearLayout>

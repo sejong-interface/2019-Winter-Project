@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="com.example.jkey2.jkeyAndroid.SettingRestCalculator"></activity>
 
-        <activity android:name="com.example.jkey2.jkeyAndroid.weatherparse" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
 
+        <activity android:name="com.example.jkey2.jkeyAndroid.Weatherparse" />
         <activity android:name="com.example.jkey2.jkeyAndroid.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,21 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.jkey2.jkeyAndroid.jacksonparse" />
+        <activity android:name="com.example.jkey2.jkeyAndroid.Jacksonparse" />
 
-        <service
-
-            android:name="com.example.jkey2.jkeyAndroid.FireBaseMessagingService">
-
+        <service android:name="com.example.jkey2.jkeyAndroid.FireBaseMessagingService">
             <intent-filter>
-
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-
         </service>
-
-
+        <service android:name="com.example.jkey2.jkeyAndroid.FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
