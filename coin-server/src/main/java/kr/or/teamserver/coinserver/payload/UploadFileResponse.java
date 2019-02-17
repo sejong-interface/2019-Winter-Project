@@ -13,5 +13,19 @@ public class UploadFileResponse {
         this.size = size;
     }
 
-    // Getters and Setters (Omitted for brevity)
+    public String getFileName() {
+        return fileName;
+    }
+
+    public String getFileDownloadUri() {
+        return fileDownloadUri;
+    }
+
+    public String getFileType() {
+        return fileType;
+    }
+
+    public long getSize() {
+        return size;
+    }
 }
