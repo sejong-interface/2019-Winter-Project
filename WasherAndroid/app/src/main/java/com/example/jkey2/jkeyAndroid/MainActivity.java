@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         Button Jackson = (Button)findViewById(R.id.jacksonbt);
         Button Weather = (Button)findViewById(R.id.weatherbutton);
         Button Restcalculate = (Button)findViewById(R.id.restcalculatebutton);
-
         Toast Errortoast = Toast.makeText(this, "Hello",Toast.LENGTH_LONG);
 
         try{
