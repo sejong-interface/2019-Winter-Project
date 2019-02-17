@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.example.jkey2.myapplication.R;
 import com.google.firebase.iid.FirebaseInstanceId;
 
-
 public class MainActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
@@ -21,20 +20,11 @@ public class MainActivity extends AppCompatActivity {
         Button Jackson = (Button)findViewById(R.id.jacksonbt);
         Button Weather = (Button)findViewById(R.id.weatherbutton);
         Button Restcalculate = (Button)findViewById(R.id.restcalculatebutton);
-        Button UserTokenBt = (Button)findViewById(R.id.UserTokenBt);
-
         Toast Errortoast = Toast.makeText(this, "Hello",Toast.LENGTH_LONG);
 
         try{
             String token = FirebaseInstanceId.getInstance().getToken();
-
-       //     Intent FirebaseIntent = new Intent(this, FirebaseInstanceIDService.class);
-
-       //     FirebaseIntent.putExtra("Mdata", Usertoken);
-
             Log.d("디바이스 토큰 :", token);
-
-//            startActivity(FirebaseIntent);
         }catch (NullPointerException e){
             e.printStackTrace();
             Toast.makeText(this, "Device Token Error!",Toast.LENGTH_LONG).show();
@@ -63,15 +53,6 @@ public class MainActivity extends AppCompatActivity {
             {
                 Intent RIntent = new Intent(getApplicationContext(), SettingRestCalculator.class);
                 startActivity(RIntent);
-            }
-        });
-        UserTokenBt.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent ServerIntent = new Intent(getApplicationContext(), ServerConnect.class);
-                startActivity(ServerIntent);
             }
         });
     }
