@@ -10,7 +10,6 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-
 import kr.or.teamserver.coinserver.service.AndroidPushNotificationsService;
 
 @RestController
