@@ -1,10 +1,9 @@
 package kr.or.teamserver.coinserver.controller.command;
 
+import kr.or.teamserver.coinserver.exception.MyFileNotFoundException;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 import org.slf4j.Logger;
@@ -28,13 +27,10 @@ public class ReadHelpFile {
             }
             bufferedReader.close();
 
-        } catch (FileNotFoundException e) {
-            logger.error("Cannot find file", e);
+        } catch (Exception ex) {
+            logger.error("Cannot find file", ex);
             help.clear();
-
-        } catch (IOException e) {
-            logger.error("Cannot open file", e);
-            help.clear();
+            throw new MyFileNotFoundException("File not found ", ex);
         }
 
         return help;
