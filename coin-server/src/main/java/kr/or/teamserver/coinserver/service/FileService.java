@@ -69,7 +69,7 @@ public class FileService {
         try {
             Path filePath = this.fileStorageLocation.resolve(fileName).normalize();
             Resource resource = new UrlResource(filePath.toUri());
-            if(resource.exists()) {
+            if (resource.exists()) {
                 return resource;
             } else {
                 throw new MyFileNotFoundException("File not found " + fileName);
@@ -84,8 +84,8 @@ public class FileService {
 
         try {
             contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-        } catch (IOException ex) {
-            logger.info("Could not determine file type.");
+        } catch (Exception ex) {
+            throw new MyFileNotFoundException("Could not determine file type.", ex);
         }
 
         return contentType;
