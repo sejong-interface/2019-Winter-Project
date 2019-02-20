@@ -27,24 +27,28 @@ class DeviceServiceImplTest {
         verify(deviceDAO, times(2)).save(any(Device.class));
     }
 
-    @DisplayName("디바이스 읽기")
+    @DisplayName("디바이스 읽기 nullPointException")
     @Test
-    void read_device() {
-        try {
-            deviceService.read(1L);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        verify(deviceDAO).findById(any(Long.class));
+    void read_device_null() {
+        doThrow(new ArithmeticException()).when(deviceDAO).findById(any(Long.class));
+        deviceDAO.findById(null);
     }
 
-    @DisplayName("디바이스 수정")
+    @DisplayName("디바이스 수정 NullPointException")
     @Test
-    void update_device(){
+    void update_device_null() {
         try {
             deviceService.update(1L, "sdfa6we5fwfaeq");
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             verify(deviceDAO).save(any(Device.class));
+        }
+    }
+
+    @DisplayName("디바이스 수정 Exception")
+    @Test
+    void update_device_exception(){
+        try {
+            deviceService.update(1L, "sdfa6we5fwfaeq");
         } catch (Exception e){
             verify(deviceDAO).save(any(Device.class));
         }

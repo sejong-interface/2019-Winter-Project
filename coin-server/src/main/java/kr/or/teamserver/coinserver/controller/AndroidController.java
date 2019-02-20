@@ -30,10 +30,6 @@ public class AndroidController {
 
     @GetMapping("/device/{id}")
     public Device device(@PathVariable Long id){
-        if(!deviceService.read(id).isPresent()) {
-            throw new DeviceNotFound("404" + id);
-        }
-
         return deviceService.read(id).get();
     }
 

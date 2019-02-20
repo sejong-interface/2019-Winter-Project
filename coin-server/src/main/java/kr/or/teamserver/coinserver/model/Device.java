@@ -1,7 +1,10 @@
 package kr.or.teamserver.coinserver.model;
 
+import org.springframework.data.annotation.PersistenceConstructor;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "device")
@@ -21,6 +24,7 @@ public class Device {
 
     }
 
+    @PersistenceConstructor
     public Device(Long id, String token, LocalDateTime registDate){
         this.id = id;
         this.token = token;
@@ -35,8 +39,6 @@ public class Device {
         return new Device(id, token, LocalDateTime.now());
     }
 
-    // TODO of 네이밍 이유
-
     public Long getId() {
         return id;
     }
@@ -47,6 +49,21 @@ public class Device {
 
     public LocalDateTime getRegistDate() {
         return registDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Device device = (Device) o;
+        return Objects.equals(id, device.id) &&
+                Objects.equals(token, device.token) &&
+                Objects.equals(registDate, device.registDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, token, registDate);
     }
 
     @Override
