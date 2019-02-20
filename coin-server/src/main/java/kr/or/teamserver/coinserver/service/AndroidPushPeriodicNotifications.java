@@ -47,6 +47,8 @@ public class AndroidPushPeriodicNotifications {
 
         body.put("notification", notification);
 
+        System.out.println(body.toString());
+
         return body.toString();
     }
 }

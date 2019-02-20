@@ -9,6 +9,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+// firebase_server_key = firebase project > cloud messaging > server key
+
 @Service
 public class AndroidPushNotificationsService {
     private static final String firebase_server_key="AAAACMhceLs:APA91bG3mCWwIGTwT_7-cYiXm5iyzCbmyUi6wZmDFeHZxvDRqOXtJ1fe1ADNt7N_uYpY1mK_zWHRUlPoETRvn8PXH3zF_eUvsggaChPqeIvPLF_GYW1rTzZlfuUUvnU0TQlIig9S2wo3";

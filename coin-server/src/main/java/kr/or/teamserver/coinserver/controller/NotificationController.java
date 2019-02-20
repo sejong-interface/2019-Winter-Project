@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 import kr.or.teamserver.coinserver.service.AndroidPushNotificationsService;
@@ -22,6 +23,7 @@ public class NotificationController {
     @Autowired
     AndroidPushNotificationsService androidPushNotificationsService;
 
+    @Scheduled(fixedRate = 5000) //5초 > 실제 서버 동작 시 1000*60*60*24 ( 24시간 )
     @GetMapping(value = "/send", produces = "application/json")
     public @ResponseBody ResponseEntity<String> send() throws JSONException {
         String notifications = AndroidPushPeriodicNotifications.PeriodicNotificationJson();
