@@ -13,7 +13,7 @@ public class ReadHelpFile {
     private final Logger logger = LoggerFactory.getLogger(ReadHelpFile.class);
 
     public List<String> getStringBuffer(String filename) {
-        List help = new ArrayList();
+        List<String> help = new ArrayList<String>();
 
         try {
             File file = new File(filename);
@@ -31,8 +31,9 @@ public class ReadHelpFile {
             logger.error("Cannot find file", ex);
             help.clear();
             throw new MyFileNotFoundException("File not found ", ex);
-        }
+        } finally {
 
-        return help;
+            return help;
+        }
     }
 }
