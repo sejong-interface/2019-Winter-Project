@@ -18,8 +18,8 @@ public class AndroidPushPeriodicNotifications {
                 {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","TUESDAY"},
                 {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","WEDNESDAY"},
                 {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","THURSDAY"},
-                {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","FRIDAY"},
-                {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","SATURDAY"},
+                {"cn1uFGx9Hwk:APA91bEaXlI7B_x20mtgKPDsC5fY5f_7RpftCunsJ4wLoOe04vsvLajopAEQqf8csFBB9oBOnqCUjOWQT1BfOumWyoypd7o0lTlGouV4CiSBZuu3Ha8pU6deQg9nqI06ZABS9GNKXrq2","FRIDAY"},
+                {"cn1uFGx9Hwk:APA91bEaXlI7B_x20mtgKPDsC5fY5f_7RpftCunsJ4wLoOe04vsvLajopAEQqf8csFBB9oBOnqCUjOWQT1BfOumWyoypd7o0lTlGouV4CiSBZuu3Ha8pU6deQg9nqI06ZABS9GNKXrq2","SATURDAY"},
                 {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","SUNDAY"},
         };
 
@@ -28,7 +28,7 @@ public class AndroidPushPeriodicNotifications {
         List<String> tokenlist = new ArrayList<String>();
 
         for(int i=0; i<sampleData.length; i++){
-            if (sampleData[i][1] == localDate.getDayOfWeek().name()){
+            if (sampleData[i][1] == "SATURDAY"){
                 tokenlist.add(sampleData[i][0]);
             }
         }

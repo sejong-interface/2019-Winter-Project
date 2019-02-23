@@ -6,6 +6,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.Calendar;
 
+import kr.or.teamserver.coinserver.controller.dto.DeviceDto;
 import kr.or.teamserver.coinserver.service.AndroidPushPeriodicNotifications;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,4 +44,9 @@ public class NotificationController {
         return new ResponseEntity<>("Push Notification ERROR!", HttpStatus.BAD_REQUEST);
     }
 
+    @PostMapping("/device")
+    public void deviceData (@RequestBody DeviceDto deviceDto){
+        System.out.println("token : "+deviceDto.token);
+        System.out.println("date : "+deviceDto.date);
+    }
 }
