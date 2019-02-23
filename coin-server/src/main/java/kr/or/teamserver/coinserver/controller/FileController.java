@@ -28,9 +28,9 @@ public class FileController {
     @ResponseBody
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = fileService.storeFile(file);
-        String fileDownloadUri = fileService.getUri(fileName);
+        String fileDownloadUrl = fileService.getUrl(fileName);
 
-        return new UploadFileResponse(fileName, fileDownloadUri,
+        return new UploadFileResponse(fileName, fileDownloadUrl,
                 file.getContentType(), file.getSize());
     }
 

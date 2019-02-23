@@ -1,7 +1,7 @@
 package kr.or.teamserver.coinserver.service;
 
 import kr.or.teamserver.coinserver.exception.FileStorageException;
-import kr.or.teamserver.coinserver.exception.MyFileNotFoundException;
+import kr.or.teamserver.coinserver.exception.FileNotFoundException;
 import kr.or.teamserver.coinserver.property.FileStorageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -56,13 +56,13 @@ public class FileService {
         }
     }
 
-    public String getUri(String fileName) {
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+    public String getUrl(String fileName) {
+        String fileDownloadUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path(fileName)
                 .toUriString();
 
-        return fileDownloadUri;
+        return fileDownloadUrl;
     }
 
     public Resource loadFileAsResource(String fileName) {
@@ -72,10 +72,10 @@ public class FileService {
             if (resource.exists()) {
                 return resource;
             } else {
-                throw new MyFileNotFoundException("File not found " + fileName);
+                throw new FileNotFoundException("File not found " + fileName);
             }
         } catch (MalformedURLException ex) {
-            throw new MyFileNotFoundException("File not found " + fileName, ex);
+            throw new FileNotFoundException("File not found " + fileName, ex);
         }
     }
 
@@ -85,7 +85,7 @@ public class FileService {
         try {
             contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
         } catch (Exception ex) {
-            throw new MyFileNotFoundException("Could not determine file type.", ex);
+            throw new FileNotFoundException("Could not determine file type.", ex);
         }
 
         return contentType;
