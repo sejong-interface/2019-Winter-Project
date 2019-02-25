@@ -11,6 +11,6 @@ public class ExceptionHandlingController {
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     @ExceptionHandler(MyFileNotFoundException.class)
     public void conflict() {
-
+        //empty
     }
 }
