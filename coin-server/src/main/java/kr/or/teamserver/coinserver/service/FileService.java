@@ -3,6 +3,7 @@ package kr.or.teamserver.coinserver.service;
 import kr.or.teamserver.coinserver.exception.FileStorageException;
 import kr.or.teamserver.coinserver.exception.FileNotFoundException;
 import kr.or.teamserver.coinserver.property.FileStorageProperties;
+import kr.or.teamserver.coinserver.payload.UploadFileResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -25,6 +26,7 @@ public class FileService {
 
     private final Path fileStorageLocation;
     private final Logger logger = LoggerFactory.getLogger(FileService.class);
+    private UploadFileResponse uploadFileResponse;
 
     @Autowired
     public FileService(FileStorageProperties fileStorageProperties) {

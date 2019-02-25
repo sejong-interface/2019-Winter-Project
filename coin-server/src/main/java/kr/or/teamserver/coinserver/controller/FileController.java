@@ -2,6 +2,7 @@ package kr.or.teamserver.coinserver.controller;
 
 import kr.or.teamserver.coinserver.payload.UploadFileResponse;
 import kr.or.teamserver.coinserver.service.FileService;
+import kr.or.teamserver.coinserver.payload.UploadFileResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -12,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
@@ -23,6 +23,7 @@ public class FileController {
 
     @Autowired
     private FileService fileService;
+    private UploadFileResponse uploadFileResponse;
 
     @PostMapping("/upload")
     @ResponseBody
