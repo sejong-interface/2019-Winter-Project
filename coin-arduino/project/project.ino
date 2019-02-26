@@ -5,14 +5,14 @@
 
 
 SoftwareSerial ESP8266(8, 9);
-String ssid = "";
-String password = "";
-String domain = "192.168.0.100";
-String port = "8099";
-String address = "/arduino";
+String ssid = "interface518";
+String password = "518interface";
+String domain = "192.168.0.46";
+String port = "8080";
+String address = "/arduino/";
 
 EnergyMonitor coinWasher;
-int washerId = 0;
+int washerId = 1;
 int rmsV = 220; //전압의 RMS(Root Mean Square) 값
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
@@ -50,14 +50,14 @@ void loop() {
   httpRequest = httpCom(jsonData);
 
   while (!sendAT("AT+CIPSTART=\"TCP\",\"" + domain + "\"," + port, "OK", 15)) {}
-  while (!sendAT("AT+CIPSEND=" + (String)httpRequest.length(), "OK", 15)) {}
+  while (!sendAT("AT+CIPSEND=" + (String) httpRequest.length(), "OK", 15)) {}
 
   amountElectricMsg(rmsPower);
   
   ESP8266.println(httpRequest);
   Serial.println(httpRequest);
 
-  delay(10000);
+  delay(1000);
 }
 
 
@@ -102,16 +102,16 @@ void commandMsg(String atCommand, boolean atResponse){
 
 void amountElectricMsg(long power){
   clean();
-  showMsg("Power : " + (String)power);
+  showMsg("Power : " + (String) power);
 }
 
 String httpCom(String jsonData){
   String cmd = "";
-  cmd.concat("POST " + address + " HTTP/1.1\r\n");
+  cmd.concat("POST " + address + (String) washerId + " HTTP/1.1\r\n");
   cmd.concat("Host: " + domain + "\r\n");
   cmd.concat("Connection: close\r\n");
   cmd.concat("Content-Type: application/json\r\n");
-  cmd.concat("Content-Length: " + (String)jsonData.length() + "\r\n\r\n");
+  cmd.concat("Content-Length: " + (String) jsonData.length() + "\r\n\r\n");
   cmd.concat(jsonData + "\r\n\r\n");
 
   return cmd;
@@ -125,12 +125,6 @@ void showMsg(String data) {
   lcd.setCursor(0,0);
   lcd.print(msg);
   lcd.display();
-
-  for (int i=3; i>0; i--) {            
-    lcd.setCursor(0,1);
-    lcd.print("clear after " + String(i) + "sec");
-    delay(1000);
-  }
 }
 
 void clean() {
