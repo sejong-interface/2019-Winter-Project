@@ -15,9 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import kr.or.teamserver.coinserver.service.AndroidPushNotificationsService;
 
 @RestController
@@ -25,7 +22,6 @@ public class NotificationController {
 
     @Autowired
     AndroidPushNotificationsService androidPushNotificationsService;
-    private final Logger logger = LoggerFactory.getLogger(NotificationController.class);
 
     @GetMapping(value = "/send", produces = "application/json")
     public @ResponseBody ResponseEntity<String> send() throws JSONException {
@@ -50,7 +46,7 @@ public class NotificationController {
 
     @PostMapping("/device")
     public void deviceData (@RequestBody DeviceDto deviceDto){
-        logger.info("token : "+deviceDto.token);
-        logger.info("date : "+deviceDto.date);
+        System.out.println("token : "+deviceDto.token);
+        System.out.println("date : "+deviceDto.date);
     }
 }
