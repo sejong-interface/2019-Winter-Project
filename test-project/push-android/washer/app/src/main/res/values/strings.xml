@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">washer</string>
-    <string name="default_notification_channel_id">Channel ID</string>
-    <string name="default_notification_channel_name" translatable="true">Test</string>
-</resources>
-
