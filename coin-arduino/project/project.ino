@@ -13,7 +13,7 @@ String address = "/arduino/";
 
 EnergyMonitor coinWasher;
 int washerId = 0;
-int rmsV = 220;
+int rmsV = 235;
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 String msg;
@@ -33,19 +33,21 @@ void setup() {
   pinMode(13, INPUT);
   
   washerId = checkDeviceId();
+  
+  Serial.println("deviceId : " + (String)washerId);
 
   while(!sendAT("AT","OK",3)) { }
   while(!sendAT("AT+CWMODE=3","OK",3)) { }
   while(!sendAT("AT+CWJAP=\"" + ssid + "\",\"" + password + "\"","OK",3)) { }
 
-  coinWasher.current(1, 111.1);
+  coinWasher.current(0, 111.1);
 }
 
 void loop() {
   String httpRequest = "";
   String jsonData = "";
   double rmsI = coinWasher.calcIrms(1480);
-  long rmsPower = rmsI * rmsI;
+  long rmsPower = rmsI * rmsV;
   
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& root = jsonBuffer.createObject();
@@ -64,7 +66,7 @@ void loop() {
   ESP8266.println(httpRequest);
   Serial.println(httpRequest);
 
-  delay(1000);
+  delay(10000);
 }
 
 
@@ -131,6 +133,9 @@ void showMsg(String data) {
   Serial.println(msg);
   lcd.setCursor(0,0);
   lcd.print(msg);
+
+  lcd.setCursor(0,1);
+  lcd.print("DeviceID : " + (String)washerId);
   lcd.display();
 }
 
@@ -141,8 +146,8 @@ void clean() {
 
 /*********** id 선택 **********/
 int checkDeviceId(){
-  boolean sw1 = digitalRead(6);
-  boolean sw2 = digitalRead(7);
+  boolean sw1 = digitalRead(7);
+  boolean sw2 = digitalRead(6);
   boolean sw3 = digitalRead(10);
   boolean sw4 = digitalRead(13);
   
