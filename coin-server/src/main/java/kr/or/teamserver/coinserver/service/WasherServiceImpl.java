@@ -33,7 +33,7 @@ public class WasherServiceImpl implements WasherService {
 
     @Override
     public Washer findOne(long id) {
-        return washerDAO.findById(id).orElseGet(null);
+        return washerDAO.findById(id).orElse(Washer.of(null, 0));
     }
 
     @Override
