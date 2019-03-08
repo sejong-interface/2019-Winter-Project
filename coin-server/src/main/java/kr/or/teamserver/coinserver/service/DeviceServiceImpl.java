@@ -1,6 +1,5 @@
 package kr.or.teamserver.coinserver.service;
 
-import kr.or.teamserver.coinserver.controller.ArduinoController;
 import kr.or.teamserver.coinserver.exception.DeviceNotFound;
 import kr.or.teamserver.coinserver.model.Device;
 import kr.or.teamserver.coinserver.persistence.DeviceDAO;
@@ -17,16 +16,15 @@ public class DeviceServiceImpl implements DeviceService {
     private final DeviceDAO deviceDAO;
     private final Logger logger = LoggerFactory.getLogger(DeviceServiceImpl.class);
 
-
     @Autowired
     public DeviceServiceImpl(DeviceDAO deviceDAO) {
         this.deviceDAO = deviceDAO;
     }
 
     @Override
-    public void create(String token){
+    public void create(String token, String date){
         logger.info("new device create");
-        deviceDAO.save(Device.of(token));
+        deviceDAO.save(Device.of(token, date));
     }
 
     @Override
@@ -42,9 +40,9 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
-    public void update(Long id, String token){
+    public void update(Long id, String token, String date){
         logger.info("device update");
-        deviceDAO.save(Device.of(id, token));
+        deviceDAO.save(Device.of(id, token, date));
     }
 
     @Override
@@ -52,4 +50,11 @@ public class DeviceServiceImpl implements DeviceService {
         logger.info("device delete");
         deviceDAO.deleteById(id);
     }
+
+/*
+    @Override
+    List<Optional<Device>> readAll(){
+        return
+    }
+*/
 }

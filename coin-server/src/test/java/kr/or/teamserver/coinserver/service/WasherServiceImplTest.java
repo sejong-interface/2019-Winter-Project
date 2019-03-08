@@ -1,6 +1,7 @@
 package kr.or.teamserver.coinserver.service;
 
 import kr.or.teamserver.coinserver.model.Washer;
+import kr.or.teamserver.coinserver.persistence.WasherDAO;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -11,11 +12,12 @@ import org.mockito.junit.MockitoJUnitRunner;
 class WasherServiceImplTest {
 
     private static WasherService washerService;
-
+/*
     @BeforeAll
     static void beforeAll() {
         washerService = new WasherServiceImpl();
     }
+    */
 
     @AfterEach
     void afterEach() {

@@ -1,14 +1,30 @@
 package kr.or.teamserver.coinserver.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
+@Table(name = "washers")
 public class Washer {
-    private final long id;
-    private final long electricPower;
-    private final LocalDateTime measuredAt;
-    private final LocalDateTime createdAt;
-    private final LocalDateTime updatedAt;
+    @Id
+
+    @Column
+    private long id;
+
+    @Column
+    private long electricPower;
+
+    private LocalDateTime measuredAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public Washer() {
+
+    }
 
     public Washer(long id, long electricPower, LocalDateTime measuredAt, LocalDateTime createdAt,
                   LocalDateTime updatedAt) {

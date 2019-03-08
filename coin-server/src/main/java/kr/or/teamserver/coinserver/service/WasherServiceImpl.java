@@ -1,8 +1,10 @@
 package kr.or.teamserver.coinserver.service;
 
 import kr.or.teamserver.coinserver.model.Washer;
+import kr.or.teamserver.coinserver.persistence.WasherDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -12,12 +14,18 @@ import java.util.stream.Collectors;
 public class WasherServiceImpl implements WasherService {
 
     private final Logger logger = LoggerFactory.getLogger(WasherServiceImpl.class);
+    private Washer washer;
 
     private Map<Long, Washer> washers = new HashMap<>();
+    private WasherDAO washerDAO;
+
+    @Autowired
+    public WasherServiceImpl(WasherDAO washerDAO) { this.washerDAO = washerDAO; }
 
     @Override
     public Washer save(long electricPower) {
         long id = autoGenerateId();
+        washerDAO.save(Washer.of(id, electricPower));
         return save(id, electricPower);
     }
 
@@ -36,6 +44,7 @@ public class WasherServiceImpl implements WasherService {
         logger.info("id={}, electricPower={}", id, electricPower);
         Washer washer = Washer.of(id, electricPower);
         washers.put(id, washer);
+        washerDAO.save(Washer.of(id, electricPower));
         return washer;
     }
 
