@@ -2,17 +2,12 @@ package kr.or.teamserver.coinserver.controller;
 
 import kr.or.teamserver.coinserver.controller.dto.ResultDto;
 import kr.or.teamserver.coinserver.controller.dto.WasherDto;
-import kr.or.teamserver.coinserver.exception.DeviceNotFound;
-import kr.or.teamserver.coinserver.controller.command.ReadHelpFile;
 import kr.or.teamserver.coinserver.model.Device;
 import kr.or.teamserver.coinserver.model.Washer;
 import kr.or.teamserver.coinserver.service.DeviceService;
 import kr.or.teamserver.coinserver.service.WasherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,6 +27,11 @@ public class AndroidController {
     @GetMapping("/device/{id}")
     public Device device(@PathVariable Long id){
         return deviceService.read(id).get();
+    }
+
+    @PostMapping("/device/create")
+    public void createDevice(@RequestBody Device device){
+        deviceService.create(device.getToken(), device.getDate());
     }
 
     @GetMapping({"", "/"})

@@ -1,54 +1,59 @@
 package kr.or.teamserver.coinserver.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.PersistenceConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
 @Table(name = "device")
 public class Device {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 1000, nullable = false)
     private String token;
 
     @Column(length = 100, nullable = false)
-    private LocalDateTime registDate;
+    private String date;
 
-    public Device(){
+    public Device() {
 
     }
 
+    public Device(String token, String date) {
+        this.token = token;
+        this.date = date;
+    }
+
+    @JsonCreator
     @PersistenceConstructor
-    public Device(Long id, String token, LocalDateTime registDate){
+    public Device(@JsonProperty("id") Long id, @JsonProperty("token") String token, @JsonProperty("date") String date){
         this.id = id;
         this.token = token;
-        this.registDate = registDate;
+        this.date = date;
     }
 
-    public static Device of(String token){
-        return new Device(null, token, LocalDateTime.now());
+    public static Device of(String token, String date){
+        return new Device(null, token, date);
     }
 
-    public static Device of(Long id, String token){
-        return new Device(id, token, LocalDateTime.now());
+    public static Device of(Long id, String token, String date){
+        return new Device(id, token, date);
     }
 
     public Long getId() {
         return id;
     }
-
     public String getToken() {
         return token;
     }
 
-    public LocalDateTime getRegistDate() {
-        return registDate;
+    public String getDate() {
+        return date;
     }
 
     @Override
@@ -58,12 +63,12 @@ public class Device {
         Device device = (Device) o;
         return Objects.equals(id, device.id) &&
                 Objects.equals(token, device.token) &&
-                Objects.equals(registDate, device.registDate);
+                Objects.equals(date, device.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, token, registDate);
+        return Objects.hash(id, token, date);
     }
 
     @Override
@@ -71,7 +76,7 @@ public class Device {
         return "Device{" +
                 "id=" + id +
                 ", token='" + token + '\'' +
-                ", registDate='" + registDate + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

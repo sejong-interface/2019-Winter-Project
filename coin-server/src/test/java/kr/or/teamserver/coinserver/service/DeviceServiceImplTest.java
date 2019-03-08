@@ -23,7 +23,7 @@ class DeviceServiceImplTest {
     @DisplayName("디바이스 생성")
     @Test
     void create_device() {
-        deviceService.create("64efw1f5qw6f");
+        deviceService.create("64efw1f5qw6f", "화");
         verify(deviceDAO, times(2)).save(any(Device.class));
     }
 
@@ -38,7 +38,7 @@ class DeviceServiceImplTest {
     @Test
     void update_device_null() {
         try {
-            deviceService.update(1L, "sdfa6we5fwfaeq");
+            deviceService.update(1L, "sdfa6we5fwfaeq", "mon");
         } catch (NullPointerException e) {
             verify(deviceDAO).save(any(Device.class));
         }
@@ -48,7 +48,7 @@ class DeviceServiceImplTest {
     @Test
     void update_device_exception(){
         try {
-            deviceService.update(1L, "sdfa6we5fwfaeq");
+            deviceService.update(1L, "sdfa6we5fwfaeq", "mon");
         } catch (Exception e){
             verify(deviceDAO).save(any(Device.class));
         }
