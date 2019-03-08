@@ -25,8 +25,6 @@ import java.nio.file.StandardCopyOption;
 public class FileService {
 
     private final Path fileStorageLocation;
-    private final Logger logger = LoggerFactory.getLogger(FileService.class);
-    private UploadFileResponse uploadFileResponse;
 
     @Autowired
     public FileService(FileStorageProperties fileStorageProperties) {
@@ -41,7 +39,6 @@ public class FileService {
     }
 
     public String storeFile(MultipartFile file) {
-
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
         try {
@@ -49,7 +46,7 @@ public class FileService {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
-            Path targetLocation = this.fileStorageLocation.resolve(fileName);
+            Path targetLocation = fileStorageLocation.resolve(fileName);
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
             return fileName;
@@ -82,7 +79,7 @@ public class FileService {
     }
 
     public String getContentType(Resource resource, HttpServletRequest request) {
-        String contentType = "application/octet-stream";
+        String contentType;
 
         try {
             contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());

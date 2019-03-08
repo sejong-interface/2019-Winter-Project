@@ -1,16 +1,17 @@
 package kr.or.teamserver.coinserver.property;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "file")
 public class FileStorageProperties {
-    private String baseDir;
+    private String uploadDir;
 
     public String getUploadDir() {
-        return baseDir;
+        return uploadDir;
     }
 
-    public void setUploadDir(String baseDir) {
-        this.baseDir = baseDir;
+    public void setUploadDir(String uploadDir) {
+        this.uploadDir = uploadDir;
     }
 }

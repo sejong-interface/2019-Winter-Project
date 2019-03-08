@@ -1,7 +1,5 @@
 package kr.or.teamserver.coinserver.payload;
 
-import java.util.Objects;
-
 public class UploadFileResponse {
     private String fileName;
     private String fileDownloadUrl;
@@ -12,38 +10,6 @@ public class UploadFileResponse {
         this.fileName = fileName;
         this.fileDownloadUrl = fileDownloadUrl;
         this.fileType = fileType;
-        this.size = size;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public String getFileDownloadUrl() {
-        return fileDownloadUrl;
-    }
-
-    public String getFileType() {
-        return fileType;
-    }
-
-    public long getSize() {
-        return size;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public void setFileDownloadUrl(String fileDownloadUrl) {
-        this.fileDownloadUrl = fileDownloadUrl;
-    }
-
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
-    }
-
-    public void setSize(long size) {
         this.size = size;
     }
 
