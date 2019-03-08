@@ -44,6 +44,6 @@ public class AndroidController {
     @GetMapping("/{id}")
     public ResultDto<WasherDto> searchOne(@PathVariable long id) {
         Washer washer = washerService.findOne(id);
-        return ResultDto.from(List.of(washer));
+        return ResultDto.from(List.of(WasherDto.from(washer)));
     }
 }

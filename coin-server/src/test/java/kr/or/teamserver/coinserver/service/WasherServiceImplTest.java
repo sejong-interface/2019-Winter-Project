@@ -12,16 +12,9 @@ import org.mockito.junit.MockitoJUnitRunner;
 class WasherServiceImplTest {
 
     private static WasherService washerService;
-/*
-    @BeforeAll
-    static void beforeAll() {
-        washerService = new WasherServiceImpl();
-    }
-    */
 
     @AfterEach
     void afterEach() {
-        washerService.clearWashers();
     }
 
     @DisplayName("정상적인 최초 세탁기 생성")

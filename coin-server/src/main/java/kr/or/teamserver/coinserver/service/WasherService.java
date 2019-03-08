@@ -1,11 +1,8 @@
 package kr.or.teamserver.coinserver.service;
 
-import com.google.common.annotations.VisibleForTesting;
-import kr.or.teamserver.coinserver.controller.dto.ResultDto;
-import kr.or.teamserver.coinserver.controller.dto.WasherDto;
-import kr.or.teamserver.coinserver.model.Washer;
-
 import java.util.List;
+
+import kr.or.teamserver.coinserver.model.Washer;
 
 public interface WasherService {
     Washer save(long electricPower);
@@ -15,7 +12,4 @@ public interface WasherService {
     Washer findOne(long id);
 
     List<Washer> findAll();
-
-    @VisibleForTesting
-    void clearWashers();
 }

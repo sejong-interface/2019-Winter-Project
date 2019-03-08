@@ -13,7 +13,7 @@ public class Washer {
     @Id
 
     @Column
-    private long id;
+    private Long id;
 
     @Column
     private long electricPower;
@@ -26,7 +26,7 @@ public class Washer {
 
     }
 
-    public Washer(long id, long electricPower, LocalDateTime measuredAt, LocalDateTime createdAt,
+    public Washer(Long id, long electricPower, LocalDateTime measuredAt, LocalDateTime createdAt,
                   LocalDateTime updatedAt) {
         this.id = id;
         this.electricPower = electricPower;
@@ -35,12 +35,12 @@ public class Washer {
         this.updatedAt = updatedAt;
     }
 
-    public static Washer of(long id, long electricPower) {
+    public static Washer of(Long id, long electricPower) {
         LocalDateTime now = LocalDateTime.now();
         return new Washer(id, electricPower, now, now, now);
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
