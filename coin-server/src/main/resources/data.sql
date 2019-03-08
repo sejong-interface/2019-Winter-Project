@@ -1,2 +1,2 @@
-INSERT INTO device(id, token, regist_date) VALUES (null, '6dsf2dfsdf6sdfsd6ffsdf', CURRENT_TIMESTAMP());
-INSERT INTO device(id, token, regist_date) VALUES (null, '5da56sd56asd1sda56dw6a', CURRENT_TIMESTAMP());
+INSERT INTO device(token, regist_date, id) VALUES ('6dsf2dfsdf6sdfsd6ffsdf', CURRENT_TIMESTAMP(), null);
+INSERT INTO device(token, regist_date, id) VALUES ('5da56sd56asd1sda56dw6a', CURRENT_TIMESTAMP(), null);

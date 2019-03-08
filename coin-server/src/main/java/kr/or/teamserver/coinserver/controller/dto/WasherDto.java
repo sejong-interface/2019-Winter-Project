@@ -45,15 +45,15 @@ public class WasherDto {
     }
 
     private boolean isOff() {
-        return electricPower == 0;
+        return electricPower == 750;
     }
 
     private boolean isOn() {
-        return 0 < electricPower && electricPower < 10;
+        return 750 <= electricPower && electricPower<3000;
     }
 
     private boolean isRunning() {
-        return electricPower >= 10;
+        return 3000<= electricPower && electricPower <6000;
     }
 
     @Override
