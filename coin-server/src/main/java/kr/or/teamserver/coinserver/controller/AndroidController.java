@@ -3,6 +3,7 @@ package kr.or.teamserver.coinserver.controller;
 import kr.or.teamserver.coinserver.controller.dto.ResultDto;
 import kr.or.teamserver.coinserver.controller.dto.WasherDto;
 import kr.or.teamserver.coinserver.exception.DeviceNotFound;
+import kr.or.teamserver.coinserver.controller.command.ReadHelpFile;
 import kr.or.teamserver.coinserver.model.Device;
 import kr.or.teamserver.coinserver.model.Washer;
 import kr.or.teamserver.coinserver.service.DeviceService;
