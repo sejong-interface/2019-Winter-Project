@@ -17,7 +17,7 @@ import kr.or.teamserver.coinserver.service.AndroidPushNotificationsService;
 public class FcmController {
     String[][] sampleData = {
             {"dzi7HKEgSls:APA91bFcuxoC83A9y5o616fY_DKp8nz_4Be6YqymH3EuAzPwRXu1Bhi2eHhTPM2u_pOvEf-hJmxW-Hkub5EuZY-XLVm89JX7pXbngQgm5vsfyTCKMoxFg_SR_YUimnjATSkiS89446la","Monday"},
-    };
+            {"eD-SnJ_icaA:APA91bG6-Qp6TYXiuJptL0ciPwsufiQ5iqxsfYPE5VftdENDzhKVSvjdSQ6spc9zaDyGMk7JxJ6ln8zeLeCEl6UHGtXMZ38e4cZDOvbLXmc0baymiY483gYnOLp4sRcMS_N005gUeCGs","Friday"}};
 
     Calendar cal = Calendar.getInstance();
 
@@ -39,7 +39,7 @@ public class FcmController {
     @Autowired
     AndroidPushNotificationsService androidPushNotificationsService;
 
-    @RequestMapping(value = "/send", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/send", produces = "application/json")
     public @ResponseBody
     ResponseEntity<String> send() throws JSONException{
 
