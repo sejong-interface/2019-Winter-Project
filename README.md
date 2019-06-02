@@ -7,7 +7,7 @@
 - 임수빈: 앱 (C, Python, HTML)
 - 김하늬: 서버 (C, HTML, CSS, Javascript)
 - 윤찬영: 서버 (C, Python, C++, HTML, PHP)
-
+- 이경은: 서버 (C, Python, HTML, CSS, Javascript, JAVA)
 ### 일할 수 있는 시간
 * 하루 종일 가능
         주이식,강동민,김하늬,윤찬영 
